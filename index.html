@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recipe Recommender</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Libraries -->
+    <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="src/style.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <header>
+        <h1>AI Recipe Generator</h1>
+      </header>
+
+      <main>
+        <div class="form-container">
+          <form id="recipe-generator-form" onsubmit="getRecommendations(); return false;">
+            <input
+              type="text"
+              placeholder="What would you like a recipe for?"
+              autofocus
+              required
+              autocomplete="off"
+              class="instructions"
+              id="user-instructions"
+            />
+            <input
+              type="submit"
+              class="submit-button"
+              value="Get Recipes"
+            />
+          </form>
+          <div class="hint">i.e chicken, egg, tomato</div>
+        </div>
+
+        <div class="recipe hidden" id="results"></div>
+
+        <!-- Back button container (initially hidden) -->
+        <div id="back-button-container" class="hidden">
+          <button class="back-button" onclick="goBack()">← Back to Recipes</button>
+        </div>
+      </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="src/script.js"></script>
+  </body>
+</html>
